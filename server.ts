@@ -11,7 +11,6 @@ const server = new Koa();
 const router = new Router();
 
 router.all("(.*)", async (ctx) => {
-  ctx.res.setHeader("Vary", "X-Device");
   try {
     await handle(ctx.req, ctx.res);
     console.info("handled request", {
